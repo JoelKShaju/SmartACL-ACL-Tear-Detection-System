@@ -1,0 +1,166 @@
+{% extends 'signin/base.html' %}
+{% block content %}
+<header id="header" class="fixed-top">
+
+  <div class="container d-flex align-items-center">
+
+      <h1 class="mr-auto" style="color:rgb(37,150,190)" >SmartACL</h1>
+    
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+          <li ><a href="{% url 'home' %}">Home</a></li>
+          <li ><a href="{% url 'upload' %}">Upload Files</a></li>
+        </ul>
+
+  </nav>
+</div>
+
+</header>
+<main>
+  <section></section>
+  <section id="projects" class="projects section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Results</strong></h2>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+
+          <div class="rangeslider">
+            <h3 >Move the slider to view different slices of your scan.</h3>
+            <br>
+            <div class="row" style="position: relative; left:20px; word-spacing: 40px; color: rgb(37,150,190);">
+              <label for="slices">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</label>
+            </div>
+           <input type="range" min="1" max="16" value="8"  step="1" name ="slices" class="myslider" id="sliderRange">
+</div>
+</div>
+<br>
+
+
+<div class="row" fade-up>
+
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="100">
+              <div class="image" id="sliderImages">
+                {% load static %}
+                <img src="{% static 'upload/axial/1.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/2.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/3.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/4.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/5.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/6.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/7.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/8.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/9.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/10.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/11.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/12.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/13.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/14.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/15.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/axial/16.png'%}" class="img-fluid" alt=""> 
+              </div>
+              <div class="project-info text-center">
+                <a>Axial</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="200">
+              <div class="image" id="sliderimages">
+                {% load static %}
+                <img src="{% static 'upload/coronal/1.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/2.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/3.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/4.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/5.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/6.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/7.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/8.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/9.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/10.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/11.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/12.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/13.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/14.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/15.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/coronal/16.png'%}" class="img-fluid" alt=""> 
+              </div>
+              <div class="project-info text-center">
+                <a>Coronal</a>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="300">
+              <div class="image" id="sliderimage">
+                {% load static %}
+                <img src="{% static 'upload/sagittal/1.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/2.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/3.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/4.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/5.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/6.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/7.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/8.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/9.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/10.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/11.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/12.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/13.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/14.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/15.png'%}" class="img-fluid" alt="">
+                <img src="{% static 'upload/sagittal/16.png'%}" class="img-fluid" alt=""> 
+              </div>
+              <div class="project-info text-center">
+                <a >Sagittal</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="300" style="background: rgb(214,226,238)">
+              
+              <div class="project-info text-center">
+                <a >SmartACL predicts {{result}}</a>
+          
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="container align-items-center align-items-stretch">
+        <div class="row" data-aos="fade-up">
+          <form action="{% url 'loginview' %}">
+          <input type="submit" value="Log In to Save Record" name="save"></input>
+        </form>
+        </div>
+      </div>
+    </section>  
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container ">
+        <div class="row">
+
+          <div class="footer-contact">
+            <h3>SmartACL</h3>
+              <strong>Phone:</strong><a href="tel:+918422994425" style="color: rgb(214,226,238)" > +91 8422994425</a>/<a href="tel:+917719817246" style="color: rgb(214,226,238)"> 7719817246</a>/<a href="tel:+917208218090" style="color: rgb(214,226,238)" > 7208218090<br></a>
+              <strong>Email:</strong><a href="mailto:acldetection1@gmail.com" style="color: rgb(214,226,238)"> acldetection1@gmail.com<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+     </footer><!-- End Footer -->
+</main>
+{% endblock %}

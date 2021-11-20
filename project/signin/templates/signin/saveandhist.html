@@ -1,0 +1,78 @@
+{% extends 'signin/base.html' %}
+{% block content %}
+<header id="header" class="fixed-top">
+
+  <div class="container d-flex align-items-center">
+
+      <h1 class="mr-auto" style="color:rgb(37,150,190)" >Welcome,
+      {{fname}}!</h1>
+    
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+          <li ><a href="{% url 'upload' %}">Upload Files</a></li>
+          <li ><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+
+  </nav>
+</div>
+</header>
+<main>
+	<section></section>
+	<section>
+	<div class="container align-items-center align-items-stretch">
+        <div class="row align-items-center" data-aos="fade-up" >
+        	<div style="width: 30%">
+        	<form method="post" action="{% url 'save' %}">
+        	{% csrf_token %}	
+          <input type="submit" value="Save Record" name="save" id="savebtn" ></input>
+      </form>
+          <form method="POST" action="{% url 'history' %}">
+            {% csrf_token %}
+          <input type="submit" value="View Previous Record" name="viewprevious"></input>
+        </form>
+      </div>
+        </div>
+        <h4 style="color: rgb(37,150,190);" data-aos="fade-up">
+              {% if messages %}
+             {% for result in messages %}
+             {{result}}
+             {% endfor %}
+             {% endif %}</h4>
+      </div> 
+              {% if hist %}
+              <table class="table" data-aos="fade-up">
+                <tr>
+                  <th>Id</th>
+                  <th>ACL Status</th>
+                  <th>Date and Time</th>
+                </tr>
+                {% for result in hist %}
+                <tr>
+                  <td>{{result.id}}</td>
+                  <td>{{result.aclstatus}}</td>
+                  <td>{{result.updated}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+              {% endif %}
+	</section>
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container ">
+        <div class="row">
+
+          <div class="footer-contact">
+            <h3>SmartACL</h3>
+              <strong>Phone:</strong><a href="tel:+918422994425" style="color: rgb(214,226,238)" > +91 8422994425</a>/<a href="tel:+917719817246" style="color: rgb(214,226,238)"> 7719817246</a>/<a href="tel:+917208218090" style="color: rgb(214,226,238)" > 7208218090<br></a>
+              <strong>Email:</strong><a href="mailto:acldetection1@gmail.com" style="color: rgb(214,226,238)"> acldetection1@gmail.com<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+     </footer><!-- End Footer -->
+</main>
+
+{% endblock %}
+

@@ -1,0 +1,71 @@
+{% extends 'signin/base.html' %}
+{% block content %}
+<header id="header">
+   <div class="container d-flex align-items-center">
+
+      <h1 class="mr-auto" style="color:rgb(37,150,190)">SmartACL</h1>
+ 
+  <div class="nav-menu">
+    <ul>
+          <li class="active"><a href="javascript:javascript:history.go(-1)">Back</a></li>
+  </div>
+</header>
+
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container" data-aos="fade-up">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            {% load static %}
+            <img src="{% static 'signin/mri.jpg' %}" alt="mriknee" class="login-card-img">
+          
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h4>
+              {% if messages %}
+             {% for result in messages %}
+             {{result}}
+             {% endfor %}
+             {% endif %}</h4>
+              <p class="login-card-description">Reset Password</p>
+            <form method="POST">
+				      {% csrf_token %}	
+              <input type="number" name="otp" placeholder="Enter OTP" required/>
+              
+              <!--<input type="password" name="pwd" placeholder="Enter Old Password" required/>-->
+              <input type="password" name="newpwd" placeholder="Enter New Password" onchange="form.newrepwd.pattern=this.value" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title=" " required/>
+              <input type="password" name="newrepwd" placeholder="Confirm New Password" pattern="" required/>
+				      <input type="submit" value="Change Password" name="resetpwd">
+			       </form> 
+             <div id="message">
+  <h6>Password must contain the following:</h6>
+  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">A <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main> 
+     <!-- footer-->
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="footer-contact">
+            <h3>SmartACL</h3>
+              <strong>Phone:</strong><a href="tel:+918422994425" style="color: rgb(214,226,238)" > +91 8422994425</a>/<a href="tel:+917719817246" style="color: rgb(214,226,238)"> 7719817246</a>/<a href="tel:+917208218090" style="color: rgb(214,226,238)"> 7208218090<br></a>
+              <strong>Email:</strong><a href="mailto:acldetection1@gmail.com" style="color: rgb(214,226,238)"> acldetection1@gmail.com<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+     </footer><!-- End Footer -->
+{% endblock %}

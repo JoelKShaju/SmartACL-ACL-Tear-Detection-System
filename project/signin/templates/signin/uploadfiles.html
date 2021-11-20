@@ -1,0 +1,55 @@
+{% extends 'signin/base.html' %}
+{% block content %}
+<main>
+<header id="header">
+   <div class="container d-flex align-items-center">
+
+      <h1 class="mr-auto" style="color:rgb(37,150,190)">SmartACL</h1>
+ 
+  <div class="nav-menu">
+    <ul>
+      <li ><a href="{% url 'home' %}">Home</a></li>
+          <li class="active"><a href="">Upload Files</a></li>
+          <li ><a href="{% url 'loginview' %}">Login</a></li>
+          <li ><a href="{% url 'signinview' %}">Sign Up</a></li>
+        </ul>
+  </div>
+</header>
+
+	<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container" data-aos="fade-up">
+    	<div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            {% load static %}
+            <img src="{% static 'signin/mri.jpg' %}" alt="mriknee" class="login-card-img">
+            
+          </div>
+            <div class="col-md-7">
+            <div class="card-body">
+            <p class="login-card-description">Upload the Files</p>
+<form action="" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form.as_p }}
+  <!--<input type="file" name="dicomfile">-->
+  <input type="submit" name="submit">
+</form>
+</main>
+   <!-- footer-->
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="footer-contact">
+            <h3>SmartACL</h3>
+              <strong>Phone:</strong><a href="tel:+918422994425" style="color: rgb(214,226,238)"> +91 8422994425</a>/<a href="tel:+917719817246" style="color: rgb(214,226,238)"> 7719817246</a>/<a href="tel:+917208218090" style="color: rgb(214,226,238)"> 7208218090<br></a>
+              <strong>Email:</strong><a href="mailto:acldetection1@gmail.com" style="color: rgb(214,226,238)"> acldetection1@gmail.com<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+     </footer><!-- End Footer -->
+{% endblock %}

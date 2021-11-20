@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SmartACL</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  {% load static %}  
+  <link href="{% static 'css/bootstrap.min.css' %}" >  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+  
+  <style type="text/css">
+
+  #header {
+  background: rgba(214,226,238,255);
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 5px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: white;
+  transition: 0.3s;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: rgb(37,150,190);
+}
+/*section*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #fff;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  color: #000;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #000;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: black;
+  bottom: 0;
+  left: calc(50% - 25px);
+  color: black;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: black;
+}
+
+
+
+/* image slider*/
+.slides {display:none;}
+
+
+
+
+  input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/*about us */
+
+.about-us .content h2 {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.about-us .content h3 {
+  font-weight: 500;
+  line-height: 32px;
+  font-size: 24px;
+  color: black;
+}
+
+.about-us .content ul {
+  list-style: none;
+  font-size: 16px;
+  
+}
+
+.about-us .content ul li::before {
+  content: "\2022";
+  color: rgb(37,150,190);
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  position: relative;
+}
+
+.about-us .content ul i {
+  left: 0;
+  top: 7px;
+  position: absolute;
+  font-size: 20px;
+  color: #000;
+}
+
+.about-us .content p:last-child {
+  margin-bottom: 0;
+  color: black;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: rgb(37,150,190);
+  color: white;
+}
+
+/* Style the container for inputs */
+.container {
+  /*background-color: #f1f1f1;*/
+  padding: 20px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 2px 35px;
+  font-size: 12px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+  body {
+  font-family: "Karla", sans-serif;
+  background-color: #fff;
+  min-height: 100vh; }
+
+.brand-wrapper {
+  margin-bottom: 19px; }
+  .brand-wrapper .logo {
+    height: 25px; }
+
+.login-card {
+  border: 0;
+  border-radius: 27.5px;
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden; }
+
+  .login-card-img {
+    border-radius: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+  .login-card .card-body {
+    padding: 85px 60px 60px; }
+   
+
+   .login-card-description {
+    font-size: 25px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 23px; }
+
+  .login-card form {
+    max-width: 326px; }
+
+  .login-card .form-control {
+    border: 1px solid #d5dae2;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    min-height: 45px;
+    font-size: 13px;
+    line-height: 15;
+    font-weight: normal; }
+
+    .login-card .form-control::-webkit-input-placeholder {
+      color: #919aa3; }
+    .login-card .form-control::-moz-placeholder {
+      color: #919aa3; }
+    .login-card .form-control:-ms-input-placeholder {
+      color: #919aa3; }
+    .login-card .form-control::-ms-input-placeholder {
+      color: #919aa3; }
+    .login-card .form-control::placeholder {
+      color: #919aa3; }
+
+  .login-card .login-btn {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; }
+
+    .login-card .login-btn:hover {
+      border: 1px solid #000;
+      background-color: transparent;
+      color: #000; }
+
+  .login-card .forgot-password-link {
+    font-size: 14px;
+    color: #919aa3;
+    margin-bottom: 12px; }
+
+  .login-card-footer-text {
+    font-size: 16px;
+    color: #0d2366;
+    margin-bottom: 60px; }
+   .login-card-footer-nav a {
+    font-size: 14px;
+    color: #919aa3; }
+
+    /*carousel*/
+
+    #hero {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+#hero .carousel, #hero .carousel-inner, #hero .carousel-item, #hero .carousel-item::before {
+  background-size: 100% 102%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+  opacity: 1;
+}
+
+#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 36px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 10px;
+  transition: 0.1s;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#hero .carousel-control-next-icon:hover, #hero .carousel-control-prev-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*result*/
+.projects .project {
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projects .project .project-img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.image{
+  position: relative;
+  height: 280px;
+  }
+
+.image>img {
+  position: absolute;
+  display: none;
+  height: 280px;
+}
+
+.image>img.visible,
+.image>img:first-child {
+  display: block;
+}
+
+
+.projects .project .project-info {
+  padding: 25px 15px;  
+}
+
+
+.projects .project .project-info a{
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(37,150,190);
+}
+
+.projects .project .project-info a:hover{
+  color: black;
+}
+
+
+
+
+/* footer */
+#footer {
+  color: rgb(214,226,238);
+  font-size: 14px;
+  background: #111;
+}
+
+#footer .footer-top {
+  padding: 0px 0 0px 0;
+  background:rgba(37,150,190,150);
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(214,226,238);
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #1ed33c;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #000;
+}
+
+.rangeslider {
+  width: 820px;
+  margin: 0 auto;
+  position: relative;
+  right:140px;
+  border-radius: 5px;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  background: white;
+  width: 100%;
+  height: 20px;
+  opacity: 0.8;
+  border-color: rgb(37,150,190);
+  outline:none;
+
+}
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: rgb(37,150,190);
+  width: 6.25%;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.table{
+  width: 30%;
+  position: relative;
+  left: 500px;
+  bottom: 160px;
+  border-color: black;
+  font-size: 16px;
+}
+
+
+  </style>
+</head>
+<body>
+  
+  {% block content %}
+  {% endblock %}
+ </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ {% load static %}  
+   <script src="{% static '/js/signup.js' %}" ></script>
+   <script src="{% static '/js/bootstrap.min.js' %}"></script> 
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({duration: 800,});</script>
+  <script type="text/javascript">
+  window.addEventListener('load', function() {
+
+  var rangeslider = document.getElementById("sliderRange");
+
+  var images = document.getElementById("sliderImages");
+
+  var images1 = document.getElementById("sliderimages");
+   var images2 = document.getElementById("sliderimage");
+
+
+
+  rangeslider.addEventListener('input', function() {
+    for (var i = 0; i < images.children.length; i++) {
+      images.children[i].style.display = 'none';
+      images1.children[i].style.display ='none';
+      images2.children[i].style.display ='none';
+    }
+    i = Number(this.value) - 1;
+    images.children[i].style.display = 'block';
+    images1.children[i].style.display = 'block';
+    images2.children[i].style.display = 'block';
+
+  });
+
+});
+</script>
+</html>

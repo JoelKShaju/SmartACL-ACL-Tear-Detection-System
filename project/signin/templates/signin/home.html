@@ -1,0 +1,167 @@
+{% extends 'signin/base.html' %}
+{% block content %}
+<header id="header" class="fixed-top">
+
+  <div class="container d-flex align-items-center">
+
+      <h1 class="mr-auto" style="color:rgb(37,150,190)" >SmartACL</h1>
+    
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+          <li class="active"><a href="">Home</a></li>
+          <li ><a href="upload">Upload Files</a></li>
+          <li ><a href="login">Login</a></li>
+          <li ><a href="signin">Sign Up</a></li>
+        </ul>
+
+  </nav>
+</div>
+
+</header>
+<main>
+	<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+	<div class="carousel-inner" role="list-box" >
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+
+    <div class="carousel-inner"  data-interval="300">
+    	{% load static %}
+      <div class="item active ">
+        <img src="{% static 'signin/sl1.jpg' %}" style="width:100%; height: auto;">
+      </div>
+
+      <div class="item">
+        <img src="{% static 'signin/s2.jpg' %}" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="{% static 'signin/sl3.jpg' %}"  style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+</section>
+  
+<section id="about-us" class="about-us" style="background-color: #fff" >
+      <div class="container" data-aos="fade-up" >
+        <div class="section-title">
+          <h2 >About Us</h2>
+        </div>
+        <div class="row content" style="color: white">
+          <div class="col-lg-6" data-aos="fade-left" >
+            <h2 style="align-self: center; color: rgb(37,150,190)">acl tear detection by analysing mri scans</h2>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-right">
+            <p>
+              <ul style="color: black; ">
+
+               <li>ACL tear is one of most common knee injuries in an athlete or a dancer or any professional in which rigorous physical activity is required. </li>
+               <li>This injury is usually diagnosed by a Magnetic Resonance Imaging (MRI) scan which is then analyzed by radiologists with high experience to produce reports. These reports can take up to weeks depending on various factors like the availability of radiologists or the limited number of experts in this field.</li>
+               <li>Delay in such crucial reports can lead to degradation of the patient’s physical health as if this injury is critical, it needs to be attended as soon as possible else, it may lead to serious issues like permanent damage of the leg. </li>
+               <li>To improve the current situation, we have come up with a proposal that uses Deep Learning to analyze these MRI scans and predict the injury to automate and speed up the complete process of Detecting an ACL.</li>
+               </ul>
+            </p>     
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Features</strong></h2>
+        </div>
+
+    <div class="row" fade-up>
+        {% load static %}
+          
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="100">
+              <div class="project-img">
+                <img src="{% static 'features/min.png' %}">
+              </div>
+              <div class="project-info text-center">
+                <a>Get Results in Under 1 Minute</a>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-img align-items-center">
+                <img src="{% static 'features/pred.png' %}">
+              </div>
+              <div class="project-info text-center">
+                <a>Accurate Predictions</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="300">
+              <div class="project-img">
+                <img src="{% static 'features/save-1.png' %}">
+              </div>
+              <div class="project-info text-center">
+                <a>Save for Future Use</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="project" data-aos="fade-up" data-aos-delay="400">
+              <div class="project-img">
+                <img src="{% static 'features/free.png' %}">
+              </div>
+              <div class="project-info text-center">
+                <a>Free of Cost</a>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+        </div>
+    </section>
+
+    <!-- footer-->
+<footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="footer-contact">
+            <h3>SmartACL</h3>
+              <strong>Phone:</strong><a href="tel:+918422994425" style="color: rgb(214,226,238)" > +91 8422994425</a>/<a href="tel:+917719817246" style="color: rgb(214,226,238)"> 7719817246</a>/<a href="tel:+917208218090" style="color: rgb(214,226,238)" > 7208218090<br></a>
+              <strong>Email:</strong><a href="mailto:acldetection1@gmail.com" style="color: rgb(214,226,238)"> acldetection1@gmail.com<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+     </footer><!-- End Footer -->
+</main>
+{% endblock %}
