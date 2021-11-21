@@ -29,3 +29,7 @@ by a Softmax Layer.
 2. 162 cases out of 188 cases of the Abnormal class. 86.20% were detected 
 properly.
 3. 111 cases out of 124 cases of the ACL class. 89.50% were detected properly.
+
+# Training the models:
+* The CNN models were trained in kaggle. The file is available [here](https://github.com/JoelKShaju/ACL-Tear-Detection/blob/main/training/CNN_Training.ipynb).
+* The softmax model was trained locally. The file is available [here](https://github.com/JoelKShaju/ACL-Tear-Detection/blob/main/training/softmax_reg.ipynb).
